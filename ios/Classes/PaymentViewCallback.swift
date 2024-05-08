@@ -54,12 +54,12 @@ class PaymentViewCallback: KlarnaPaymentEventListener {
      }
      
      func klarnaReauthorized(paymentView: KlarnaMobileSDK.KlarnaPaymentView, approved: Bool, authToken: String?) {
-         streamHandler.sendMessage(state:"reauthorized", message: nil);
+         streamHandler.sendMessage(state:"reauthorized", message: authToken);
 
      }
      
      func klarnaFinalized(paymentView: KlarnaMobileSDK.KlarnaPaymentView, approved: Bool, authToken: String?) {
-         streamHandler.sendMessage(state:"finalized", message: nil);
+         streamHandler.sendMessage(state:"finalized", message: authToken);
 
      }
      
